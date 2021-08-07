@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios'
-const uploadApi = 'http://localhost:5001/upload/audio'
+import { uploadAudio } from '../HttpRequests/uploadAudio';
+
 const Upload = () => {
     const [file,setFile] = useState(null);
     const changeHandler =  (event) => setFile(event.target.files);
@@ -8,9 +8,8 @@ const Upload = () => {
     const submitHandler = async (e)=>{
         e.preventDefault()
         const form = new FormData();
-        console.log(Object.keys(file));
         Object.keys(file).forEach(key=>form.append('file',file[key]));
-        const response = await axios.post(uploadApi,form)
+        const response = await uploadAudio(form);
         console.log(response)
     }
     return (
