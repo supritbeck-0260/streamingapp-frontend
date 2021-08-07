@@ -11,14 +11,11 @@ const Container = () => {
     ,[]);
     return (
         <>
-        {audioFiles &&
-        <div className='row mx-0 d-flex justify-content-center align-items-center'>
-            <div className="audio_container m-5 col-lg-6 col-md-12 col-sm-12">
-                <div></div>
-                 {audioFiles.map((audio,index)=> <Audio key={index} path={audio.path} name={audio.name}/>)}
-            </div>   
-        </div>}
-             
+            {audioFiles &&
+                <div className="audio_container p-5 row m-0 d-flex justify-content-around">
+                    {audioFiles.map((audio,index)=> <Audio key={index} path={audio.path} name={audio.name}/>)}
+                </div>   
+            }  
         </>
     );
 };

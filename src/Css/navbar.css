@@ -1,0 +1,48 @@
+.Navbar_container{
+    background: rgb(21, 34, 56,1);
+    border-radius: 10px;
+    border-left: 1px solid rgba(0,0,0,0.5);
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 50px rgba(255,255,255,0.2);
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Search_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Search_input_box{
+    border-radius: 40px;
+    width: 30px;
+    position: absolute;
+    right: 0px;
+    background: inherit;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+.Search_input_box.active{
+    border: 2px solid orange;
+    background: white;
+    animation: searchbarHover 0.3s ease-out forwards;
+}
+.Search_icon{
+    position: absolute;
+    color: black;
+    right: 10px;
+    cursor: pointer;
+    
+}
+@keyframes searchbarHover {
+    from {width: 30px;}
+    to {width: 200px; }
+  }

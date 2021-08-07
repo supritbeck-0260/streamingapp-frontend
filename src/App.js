@@ -13,7 +13,7 @@ const App =()=>(
   <div  className="App">
   <Suspense fallback={<h1>Loading</h1>}>
   <BrowserRouter>
-     <NavBar/>
+     
       <Switch>
        { routes.map(({location,path},index)=>
               <Route key={index} exact path={path} 
@@ -21,6 +21,7 @@ const App =()=>(
               />
               )}
       </Switch>
+      <NavBar/>
   </BrowserRouter>
   </Suspense>
   </div>

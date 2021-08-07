@@ -1,44 +1,44 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  btn:{
-    fontWeight:'bold',
-    color:'whilte !important',
-  },
-}));
-
+import React, { useState } from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+import SearchIcon from '@material-ui/icons/Search';
+import Fab from '@material-ui/core/Fab';
+import { useStyles } from './Styles';
+import '../Css/navbar.css';
  const NavBar=()=> {
   const classes = useStyles();
-
+  const [showInput,setShowInput] = useState(false);
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Link to='/'>
-               <Button color="inherit" className={classes.btn}>Home</Button>
-          </Link>
-          <Link to='/upload'>
-               <Button color="inherit" className={classes.btn}>Upload</Button>
-        </Link>
-        </Toolbar>
-      </AppBar>
+    <div className='row m-0 text-white '>
+      <div className='Navbar_container col-lg-6 col-md-6 col-sm-6'>
+        <IconButton edge="start" color="inherit" aria-label="open drawer">
+          Home
+        </IconButton>
+        <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+          <AddIcon />
+        </Fab>
+        
+        <div className='Search_box' onMouseEnter={()=>setShowInput(true)} onMouseLeave={()=>setShowInput(false)}>
+          <input type='text' className={`${showInput && 'active'} Search_input_box`} />
+          <SearchIcon className="Search_icon" />
+        </div>
+      </div>
     </div>
   );
 }
 
 export default NavBar;
+
+{/* <AppBar position="fixed" color="primary" className={classes.appBar}>
+<Toolbar>
+  <IconButton edge="start" color="inherit" aria-label="open drawer">
+      Home
+  </IconButton>
+  <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+    <AddIcon />
+  </Fab>
+  <IconButton color="inherit">
+    <SearchIcon />
+  </IconButton>
+</Toolbar>
+</AppBar> */}
