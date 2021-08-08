@@ -1,7 +1,10 @@
 .audio_container{
     min-height: 40vh;
+    max-height: 100vh;
+    overflow-y: scroll;
     border-radius: 30px;
     border-top: 2px solid rgba(0,0,0,0.1);
     border-left: 2px solid rgba(0,0,0,0.1);
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+    background-image: url('./music.jpg') ;
 }
