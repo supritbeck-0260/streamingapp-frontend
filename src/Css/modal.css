@@ -1,0 +1,21 @@
+.Modal_container{
+    position: absolute;
+    z-index: 10;
+    bottom: 10%;
+    left: 50%;
+    background: rgba(255,255,255);
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    border-left: 4px solid rgba(255,255,255,0.5);
+    border-bottom: 4px solid rgba(255,255,255,0.5);
+    box-shadow: 10px 10px 20px grey ;
+}
+
+.Modal_backdrop{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}

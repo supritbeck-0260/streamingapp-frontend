@@ -34,6 +34,7 @@
     border: 2px solid orange;
     background: white;
     animation: searchbarHover 0.3s ease-out forwards;
+    font-weight: bold;
 }
 .Search_icon{
     position: absolute;
